@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Alpha Calculator</title>
+<link rel="stylesheet" href="STYLE.CSS">
+</head>
+
+<body>
+<main class="app-shell">
+	<section class="calculator" aria-label="Calculator">
+		<header class="topbar">
+			<div class="brand"><span class="brand-mark">+</span><span>CODE ALPHA</span></div>
+			<button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">☼</button>
+		</header>
+
+		<div class="display-panel">
+			<div class="display-label"><span id="statusText">Ready</span><button id="copyResult" class="copy-button" type="button">Copy</button></div>
+			<div id="expression" class="expression" aria-live="polite"></div>
+			<output id="display" class="display" aria-live="polite">0</output>
+		</div>
+
+		<div class="memory-row" aria-label="Memory controls">
+			<button type="button" data-action="memory-clear">MC</button>
+			<button type="button" data-action="memory-recall">MR</button>
+			<button type="button" data-action="memory-add">M+</button>
+			<button type="button" data-action="memory-subtract">M−</button>
+		</div>
+
+		<div class="buttons">
+			<button class="utility" type="button" data-action="clear">AC</button>
+			<button class="utility" type="button" data-action="delete" aria-label="Delete last character">⌫</button>
+			<button class="utility" type="button" data-value="%">%</button>
+			<button class="operator" type="button" data-value="/">÷</button>
+
+			<button type="button" data-value="7">7</button>
+			<button type="button" data-value="8">8</button>
+			<button type="button" data-value="9">9</button>
+			<button class="operator" type="button" data-value="*">×</button>
+
+			<button type="button" data-value="4">4</button>
+			<button type="button" data-value="5">5</button>
+			<button type="button" data-value="6">6</button>
+			<button class="operator" type="button" data-value="-">−</button>
+
+			<button type="button" data-value="1">1</button>
+			<button type="button" data-value="2">2</button>
+			<button type="button" data-value="3">3</button>
+			<button class="operator" type="button" data-value="+">+</button>
+
+			<button class="utility" type="button" data-action="sign">±</button>
+			<button type="button" data-value="0">0</button>
+			<button type="button" data-value=".">.</button>
+			<button class="equal" type="button" data-action="calculate">=</button>
+		</div>
+		<p class="hint">Press <kbd>Enter</kbd> to calculate · <kbd>Esc</kbd> to clear</p>
+	</section>
+
+	<aside class="history-panel">
+		<div class="history-heading"><div><span class="eyebrow">Workspace</span><h1>Calculation history</h1></div><button id="clearHistory" class="text-button" type="button">Clear</button></div>
+		<div id="historyList" class="history-list"><p class="empty-history">Your recent calculations will appear here.</p></div>
+	</aside>
+</main>
+
+<script src="SCRIPT.JS"></script>
+
+</body>
+</html>
